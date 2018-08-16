@@ -6,11 +6,14 @@ import store from './store'
 
 Vue.use(VueResource)
 router.beforeEach((to,from,next)=>{
-  console.log(111)
-  console.log(to)
-  console.log(from)
+  console.log('router.beforeEach')
+  // console.log(to)
+  // console.log(from)
   // console.log(to)
   next()
+})
+router.afterEach((to,from)=>{
+  console.log('afterEach')
 })
 new Vue({
   el: '#app',

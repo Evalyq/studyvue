@@ -9,12 +9,12 @@
 </template>
 <script>
 export default {
-    created(){
-        console.log(222)
-    },
-    mounted(){
-        console.log(111)
-    }
+    // created(){
+    //     console.log(222)
+    // },
+    // mounted(){
+    //     console.log(111)
+    // }
 }
 </script>
 

@@ -70,6 +70,18 @@ export default {
     this.page_data = faker.getHomeData();
   },
   components: { Slider, bookList, ModalDialog },
+  beforeRouteEnter(to,from,next){
+     console.log('beforeRouteEnter')
+     next()
+  },
+  beforeRouteUpdate(to,from,next){
+    console.log('beforeRouteUpdate')
+     next()
+  },
+  beforeRouteLeave(to,from,next){
+    console.log('beforeRouteLeave')
+     next()
+  },
   // computed:{
   //   announcements(){
   //     return this.$store.getters.announcements

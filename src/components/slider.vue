@@ -2,10 +2,13 @@
      <div class="swiper-container"
         ref="slider">
         <div class="swiper-wrapper">
-            <router-link v-for="(slide,index) in slides" :to="{name:'Bookdetails',params: { id : slide.id }}" class="swiper-slide"
+            <!-- <router-link v-for="(slide,index) in slides" :to="{name:'Bookdetails',params: { id : slide.id }}" class="swiper-slide"
                   tag="div" :key="index">
                 <img :src="slide.img_url"/>
-            </router-link>
+            </router-link> -->
+            <div v-for="(slide,index) in slides"  class="swiper-slide" :key="index" :id="slide.id" @click="gotoDetails(index)">
+              <img :src="slide.img_url"/>
+            </div>
         </div>
         <div class="swiper-pagination"
             ref="pagination"></div>
@@ -70,6 +73,12 @@ export default {
         type: "bullets"
       }
     });
+  },
+  methods:{
+    gotoDetails(index){
+      console.log(index)
+      this.$router.push({name:'Bookdetails',params:{id:index}})
+    }
   }
 };
 </script>

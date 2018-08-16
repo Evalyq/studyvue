@@ -1,6 +1,7 @@
 <template>
     <div>
         详情id:{{ bookid }}
+        <button @click="gotoOther">点击</button>
     </div>
 </template>
 <style>
@@ -20,6 +21,23 @@ export default {
     },
      mounted(){
         console.log(this.bookid)
+    },
+     beforeRouteEnter(to,from,next){
+     console.log('beforeRouteEnter')
+     next()
+  },
+  beforeRouteUpdate(to,from,next){
+    console.log('beforeRouteUpdate')
+     next()
+  },
+  beforeRouteLeave(to,from,next){
+    console.log('beforeRouteLeave')
+     next()
+  },
+  methods:{
+        gotoOther(){
+            this.$router.push({name:'Bookdetails',params:{id:0}})
+        }
     },
   watch:{
     '$route'(to,from){

@@ -44,6 +44,10 @@ export default new Router({
                     name: 'Home',
                     path: 'home',
                     component: Home,
+                    beforeEnter:(to,from,next) => {
+                        console.log('beforeEnter')
+                        next()
+                    }
                 },
                 {
                     name: 'Categories',
